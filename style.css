@@ -6,79 +6,123 @@
     font-family: "system-ui", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .navbar {
-    height: 100px;
-    width: 100%;
-    background: linear-gradient(to bottom, #15002b, #2d014c);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-    color: white;
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(to bottom, #15002b, #2d014c);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  color: white;
+  position: relative;
 }
 
 /* Left section: logo + nav links */
 .left-section {
-    display: flex;
-    align-items: center;
-    gap: 60px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
 }
 
-/* Logo */
 .logo img {
-    height: 80px;
-    width: 100px;
+  height: 80px;
+  width: 100px;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 /* Nav links */
 .nav-links {
-    display: flex;
-    gap: 50px;
-    list-style: none;
+  display: flex;
+  gap: 50px;
+  list-style: none;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s;
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
 }
 
-/* .nav-links a:hover {
-    color: #f39c12;
-} */
-
-/* Buttons on right */
 .buttons {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .login {
-    background-color: #ece8e0;
-    color: rgb(0, 0, 0);
+  background-color: #ece8e0;
+  color: rgb(0, 0, 0);
 }
 
 .login:hover {
-    background-color: #c6c3be;
+  background-color: #c6c3be;
 }
 
 .signup {
-    background-color: rgb(14, 215, 7);
-    color: black;
+  background-color: rgb(14, 215, 7);
+  color: black;
 }
 
 .signup:hover {
-    background-color: #07c223;
+  background-color: #07c223;
 }
+
+/* 🔻 Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      background-color: #2d014c;
+      flex-direction: column;
+      padding: 20px 0;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .hamburger {
+      display: block;
+  }
+
+  .buttons {
+      display: none;
+  }
+
+  .navbar {
+      padding: 0 20px;
+  }
+
+  .left-section {
+      gap: 20px;
+      width: 100%;
+      justify-content: space-between;
+  }
+
+  .logo img {
+      height: 60px;
+      width: 80px;
+  }
+}
+
 .container{
   background: linear-gradient(to bottom, #15002b, #2d014c);
     height: 100%;
@@ -427,10 +471,12 @@ body {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+ 
   .card2 {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
+    /* height: 300px; */
   }
 
   .card2 img {
@@ -440,11 +486,13 @@ body {
   }
 
   .card2-content {
+    height: 200px;
     max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
+  
   .card2 h4 {
     font-size: 20px;
   }

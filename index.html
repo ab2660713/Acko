@@ -10,21 +10,23 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="left-section">
-                <div class="logo"><img src="./assests/img1.png" alt=""></div>
-                <ul class="nav-links">
-                    <a href=""><li>Products</li></a>
-                    <a href=""><li>Renewals</li></a>
-                    <a href=""><li>Claims</li></a>
-                    <a href=""><li>Resources</li></a>
-                </ul>
-            </div>
-            <div class="buttons">
-                <button class="login">Login</button>
-                <button class="signup">Sign up</button>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <div class="left-section">
+            <div class="logo"><img src="./assests/img1.png" alt=""></div>
+            <div class="hamburger">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="">Products</a></li>
+                <li><a href="">Renewals</a></li>
+                <li><a href="">Claims</a></li>
+                <li><a href="">Resources</a></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <button class="login">Login</button>
+            <button class="signup">Sign up</button>
+        </div>
+    </nav>
+    
         
     </header>
     <main>
@@ -270,6 +272,13 @@
         </div>
       </div>
     </footer>
-    
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+  
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  </script>
 </body>
 </html>
